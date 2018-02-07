@@ -1,7 +1,8 @@
 # Личный проект «YetiCave»
 
 * Студент: [Leda Roosa](https://up.htmlacademy.ru/php/4/user/235546).
-* Наставник: `Неизвестно`.
+* Наставник: `Глеб Цырульников`.
+* Наставник: [Глеб Цырульников](https://htmlacademy.ru/profile/id492663).
 
 ---
 
