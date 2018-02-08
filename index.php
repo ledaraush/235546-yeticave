@@ -35,7 +35,7 @@ $user_avatar = 'img/user.jpg';
 				<img src="img/user.jpg" width="40" height="40" alt="Пользователь">
 			</div>
 			<div class="user-menu__logged">
-				<p>'Константин'</p>
+				<p>Константин</p>
 			</div>
 			
 		<?php else: ?> 
