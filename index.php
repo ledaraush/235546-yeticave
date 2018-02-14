@@ -50,6 +50,23 @@ $sixth_lot = [
 $lots__list = [$first_lot, $second_lot, $third_lot, $fourth_lot, $fifth_lot, $sixth_lot];
 
 ?>
+<!--для задания 6(2-2) первая функция -->
+<?php
+function format_sum($value)
+{
+//присвоим заданному числу переменную и округлим его до целого
+    $number=ceil($value);
+//зададим деление на разряды так:
+    if ($number >=1000)
+    {
+        $number=number_format($number, 0, ""," ");
+    }
+
+    //return $number . " ₽";
+    return $number;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -142,7 +159,7 @@ $lots__list = [$first_lot, $second_lot, $third_lot, $fourth_lot, $fifth_lot, $si
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="<?=$lot['price']?>"><b class="rub">р</b></span>
+                            <span class=lot__cost> <?=format_sum($lot['price'])?><b class="rub"></b></span>
                         </div>
                         <div class="lot__timer timer">
 
