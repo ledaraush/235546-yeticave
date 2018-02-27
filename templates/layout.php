@@ -48,8 +48,8 @@
     </div>
 </header>
 <!--включено -->
-<main class="container">
-    <?=$container;?>
+<main class="content">
+    <?=$content;?>
 </main>
 
 <footer class="main-footer">
