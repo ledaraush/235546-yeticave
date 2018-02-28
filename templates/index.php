@@ -31,7 +31,19 @@
                                 <span class=lot__cost> <?=format_sum($lot['price'])?><b class="rub"></b></span>
                             </div>
                             <div class="lot__timer timer">
+                                <?php
+                                //Установим московскую часовую зону
+                                date_default_timezone_set("Europe/Moscow");
+                                //текущее время
+                                $ts = time();
+                                //осталось до завтра
+                                $fin_time = strtotime("tomorrow");
+                                $time_remaining = $fin_time - $ts;
 
+                                $hours = floor($time_remaining/3600);
+                                $minutes = floor($time_remaining%3600/60);
+                                print("Лот доступен $hours:$minutes <br>");
+                                ?>
                             </div>
                         </div>
                     </div>
