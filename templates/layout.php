@@ -47,10 +47,8 @@
         </nav>
     </div>
 </header>
-<!--включено -->
-<main class="content">
+<!--включено <main class="content">-->
     <?=$content;?>
-</main>
 
 <footer class="main-footer">
     <nav class="nav">

@@ -9,7 +9,7 @@ $user_avatar = 'img/user.jpg';
 
 //<!--для задания 5(2-1) простой -->
 
-$categories = ["title"=>"Доски и лыжи", "title"=>"Крепления", "title"=>"Ботинки", "title"=>"Одежда", "title"=>"Инструменты", "title"=>"Разное"];
+$categories = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
 //<!--для задания 5(2-1) двумерный -->
 
 $first_lot = [
@@ -67,14 +67,15 @@ function format_sum($value)
     return $number;
 }
 //<!--для задания 7(3-1) -->
-$home_page = render("templates/index.php ", array(
-        'categories' => $categories,
-        'lots__list' => $lot,
+$home_page = render("templates/index.php", array(
+    'categories' => $categories,
+    'lots__list' => $lots__list,
 ));
 $page = render ("templates/layout.php", array (
         "title"=>"Главная",
         "content" => $home_page,
-
+        "is_auth" => $is_auth,
+        "categories"=>$categories,
 ));
 
 echo $page;
