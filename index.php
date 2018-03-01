@@ -1,6 +1,10 @@
 <?php
 //<!--для задания 7(3-1) -->
 require_once ('functions.php');
+require_once ('templates/lots_array.php');
+require_once ('templates/lot_layout.php');
+//Установим московскую часовую зону
+date_default_timezone_set("Europe/Moscow");
 
 $is_auth = (bool) rand(0, 1);
 
@@ -12,42 +16,6 @@ $user_avatar = 'img/user.jpg';
 $categories = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
 //<!--для задания 5(2-1) двумерный -->
 
-$first_lot = [
-    'title' => '2014 Rossignol District Snowboard',
-    'category' => $categories[0],
-    'price'=>'10999',
-    'picture'=>'img/lot-1.jpg'
-];
-$second_lot = [
-    'title'=>'DC Ply Mens 2016/2017 Snowboard',
-    'category'=>$categories[1],
-    'price'=>'159999',
-    'picture'=>'img/lot-2.jpg'
-];
-$third_lot = [
-    'title'=>'Крепления Union Contact Pro 2015 года размер L/XL',
-    'category'=>$categories[2],
-    'price'=>'8000',
-    'picture'=>'img/lot-3.jpg'
-];
-$fourth_lot = [
-    'title'=>'Ботинки для сноуборда DC Mutiny Charocal',
-    'category'=>$categories[3],
-    'price'=>'10999',
-    'picture'=>'img/lot-4.jpg'
-];
-$fifth_lot = [
-    'title'=>'Куртка для сноуборда DC Mutiny Charocal',
-    'category'=>$categories[4],
-    'price'=>'7500',
-    'picture'=>'img/lot-5.jpg'
-];
-$sixth_lot = [
-    'title'=>'Маска Oakley Canopy',
-    'category'=>$categories[5],
-    'price'=>'5400',
-    'picture'=>'img/lot-6.jpg'
-];
 //двумерный массив
 $lots__list = [$first_lot, $second_lot, $third_lot, $fourth_lot, $fifth_lot, $sixth_lot];
 
@@ -66,6 +34,8 @@ function format_sum($value)
     //return $number . " ₽";
     return $number;
 }
+//зададим время для лотов
+
 //<!--для задания 7(3-1) -->
 $home_page = render("templates/index.php", array(
     'categories' => $categories,
@@ -77,7 +47,10 @@ $page = render ("templates/layout.php", array (
         "is_auth" => $is_auth,
         "categories"=>$categories,
 ));
-
+//для страниц с лотами
+$lot_page = render ("templates/lot_layout.php", array (
+    "lot_title"=>"Лоты",
+));
 echo $page;
 ?>
 

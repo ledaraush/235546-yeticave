@@ -1,7 +1,6 @@
 <!--
 содержимое лейаута нужно показать на странице (print)
 ?? - считайте, что содержимое главной страницы (список лотов или список задач) получено от пользователя, поэтому выводите их соответствующим образом (с фильтрацией)
-
  Спецификация функции
 
 Функция должна принимать два аргумента:
@@ -31,6 +30,29 @@ function render ($template_path, $template_data){
 
     //возвращаем шаблон (тут опять вопрос: откуда куда мы его возвращаем ? код ясен - суть нет)
     return $template;
+}
+
+function remaining_time($fin_time)
+{
+
+    //текущее время
+    $ts = time();
+    //осталось до завтра
+    // $fin_time = strtotime("tomorrow");
+    $time_remaining = $fin_time - $ts;
+
+    $hours = floor($time_remaining / 3600);
+    // Если число меньше 10, то добавить к нему 0.
+    if ($hours < 10) {
+        $hours = "0" . $hours;
+    }
+    $minutes = floor($time_remaining % 3600 / 60);
+    // Если число меньше 10, то добавить к нему 0.
+    if ($minutes < 10) {
+        $minutes = "0" . $minutes;
+    }
+    //print("Лот доступен $hours:$minutes <br>");
+    return $hours . ":" . $minutes;
 }
 
 ?>
